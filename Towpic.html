@@ -5,96 +5,6 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="css/Two_group_picture_switch.css"/>
 </head>
-<script>
-    window.onload = function() {
-        var oNext = document.getElementById('btnB'),
-            oLast = document.getElementById('btnT'),
-            oPicL = document.getElementById('pic_L'),
-            oPicR = document.getElementById('pic_R'),
-            oTextL = document.getElementById('text_L'),
-            oTextR = document.getElementById('text_R'),
-            oNumL = document.getElementById('num_L'),
-            oNumR = document.getElementById('num_R'),
-            oPicLeftLast = document.getElementById('onclickL_L'),
-            oPicLeftNext = document.getElementById('onclickL_R'),
-            oPicRightLast = document.getElementById('onclickR_L'),
-            oPicRightNext = document.getElementById('onclickR_R'),
-            aPicL = ['img/imgOne/belle.jpg', 'img/imgOne/city.jpg', 'img/imgOne/flower.jpg', 'img/imgOne/rouse.jpg', 'img/imgOne/smail.jpg'],
-            aPicR = ["img/imgTwo/load.jpg", "img/imgTwo/pencil.jpg", "img/imgTwo/watch.jpg", "img/imgTwo/water.jpg"],
-            aTextL = ["第一组第1张", "第一组第2张", "第一组第3张", "第一组第4张", "第一组第5张"],
-            aTextR = ["第二组第1张", "第二组第2张", "第二组第3张", "第二组第4张"],
-            num = 0,
-            num1 = 0;
-        function TabL() { //左边 初始化
-            oPicL.src = aPicL[num];
-            oTextL.innerHTML = aTextL[num];
-            oNumL.innerHTML = 1 + num + '/' + aPicL.length;
-        }
-        TabL();
-        function TabR() {//右边 初始化
-            oPicR.src = aPicR[num1];
-            oTextR.innerHTML = aTextR[num1];
-            oNumR.innerHTML = 1 + num1 + '/' + aPicR.length;
-        }
-        TabR();
-        oPicLeftLast.onclick = function () { //点击左边图片 左边切换上一张
-            // alert(1);
-            num--;
-            if (num < 0) {
-                num = aPicL.length - 1;
-            }
-            TabL();
-        };
-        oPicLeftNext.onclick = function () {//点击左边图片 右边切换下一张
-            // alert(1);
-            num++;
-            if (num == aPicL.length) {
-                num = 0;
-            }
-            TabL();
-        };
-        oPicRightLast.onclick = function () { //点击右边图片 右边切换上一张
-            //alert(1);
-            num1--;
-            if (num1 < 0) {
-                num1 = aPicR.length - 1;
-            }
-            TabR();
-        };
-        oPicRightNext.onclick = function () {//点击右边图片 右边切换下一张
-            //alert(1);
-            num1++;
-            if (num1 == aPicR.length) {
-                num1 = 0
-            }
-            TabR();
-        };
-        oLast.onclick = function () {//点击按钮 两组图片同时切换上一张 同时点击里面图片也可以切换上 下张
-            //alert(this);
-            num--;
-            num1--;
-            if(num<0){
-                num=aPicL.length-1;
-            }if(num1<0){
-                num1=aPicR.length-1;
-            }
-            TabL();
-            TabR();
-        };
-        oNext.onclick = function () {//点击按钮 两组图片同时切换下一张 同时点击里面图片也可以切换上 下张
-            //alert(this);
-            num++;
-            num1++;
-            if(num==aPicL.length){
-                num=0;
-            }if(num1==aPicR.length){
-                num1=0;
-            }
-            TabL();
-            TabR();
-        };
-    }
-</script>
 <body>
 <div class="wrap">
     <form class="btn">
@@ -119,4 +29,96 @@
     </div>
 </div>
 </body>
+<script>
+    function getId(id) {
+        return document.getElementById(id);
+    }
+    var oNext = getId('btnB'),
+        oLast = getId('btnT'),
+        oPicL = getId('pic_L'),
+        oPicR = getId('pic_R'),
+        oTextL = getId('text_L'),
+        oTextR = getId('text_R'),
+        oNumL = getId('num_L'),
+        oNumR = getId('num_R'),
+        oPicLeftLast = getId('onclickL_L'),
+        oPicLeftNext = getId('onclickL_R'),
+        oPicRightLast = getId('onclickR_L'),
+        oPicRightNext = getId('onclickR_R'),
+        aPicL = ['img/imgOne/belle.jpg', 'img/imgOne/city.jpg', 'img/imgOne/flower.jpg', 'img/imgOne/rouse.jpg', 'img/imgOne/smail.jpg'],
+        aPicR = ["img/imgTwo/load.jpg", "img/imgTwo/pencil.jpg", "img/imgTwo/watch.jpg", "img/imgTwo/water.jpg"],
+        aTextL = ["第一组第1张", "第一组第2张", "第一组第3张", "第一组第4张", "第一组第5张"],
+        aTextR = ["第二组第1张", "第二组第2张", "第二组第3张", "第二组第4张"],
+        num = 0,
+        num1 = 0;
+    function TabL() { //左边 初始化
+        oPicL.src = aPicL[num];
+        oTextL.innerHTML = aTextL[num];
+        oNumL.innerHTML = 1 + num + '/' + aPicL.length;
+    }
+    TabL();
+    function TabR() {//右边 初始化
+        oPicR.src = aPicR[num1];
+        oTextR.innerHTML = aTextR[num1];
+        oNumR.innerHTML = 1 + num1 + '/' + aPicR.length;
+    }
+    TabR();
+    oPicLeftLast.onclick = function () { //点击左边图片 左边切换上一张
+        // alert(1);
+        num--;
+        if (num < 0) {
+            num = aPicL.length - 1;
+        }
+        TabL();
+    };
+    oPicLeftNext.onclick = function () {//点击左边图片 右边切换下一张
+        // alert(1);
+        num++;
+        if (num == aPicL.length) {
+            num = 0;
+        }
+        TabL();
+    };
+    oPicRightLast.onclick = function () { //点击右边图片 右边切换上一张
+        //alert(1);
+        num1--;
+        if (num1 < 0) {
+            num1 = aPicR.length - 1;
+        }
+        TabR();
+    };
+    oPicRightNext.onclick = function () {//点击右边图片 右边切换下一张
+        //alert(1);
+        num1++;
+        if (num1 == aPicR.length) {
+            num1 = 0
+        }
+        TabR();
+    };
+    oLast.onclick = function () {//点击按钮 两组图片同时切换上一张 同时点击里面图片也可以切换上 下张
+        //alert(this);
+        num--;
+        num1--;
+        if(num<0){
+            num=aPicL.length-1;
+        }if(num1<0){
+            num1=aPicR.length-1;
+        }
+        TabL();
+        TabR();
+    };
+    oNext.onclick = function () {//点击按钮 两组图片同时切换下一张 同时点击里面图片也可以切换上 下张
+        //alert(this);
+        num++;
+        num1++;
+        if(num==aPicL.length){
+            num=0;
+        }if(num1==aPicR.length){
+            num1=0;
+        }
+        TabL();
+        TabR();
+    };
+
+</script>
 </html>
