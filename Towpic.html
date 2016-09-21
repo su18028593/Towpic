@@ -7,24 +7,24 @@
 </head>
 <script>
     window.onload = function() {
-        var oNext = document.getElementById('btnB');
-        var oLast = document.getElementById('btnT');
-        var oPicL = document.getElementById('pic_L');
-        var oPicR = document.getElementById('pic_R');
-        var oTextL = document.getElementById('text_L');
-        var oTextR = document.getElementById('text_R');
-        var oNumL = document.getElementById('num_L');
-        var oNumR = document.getElementById('num_R');
-        var oPicLeftLast = document.getElementById('onclickL_L');
-        var oPicLeftNext = document.getElementById('onclickL_R');
-        var oPicRightLast = document.getElementById('onclickR_L');
-        var oPicRightNext = document.getElementById('onclickR_R');
-        var aPicL = ['img/imgOne/belle.jpg', 'img/imgOne/city.jpg', 'img/imgOne/flower.jpg', 'img/imgOne/rouse.jpg', 'img/imgOne/smail.jpg'];
-        var aPicR = ["img/imgTwo/load.jpg", "img/imgTwo/pencil.jpg", "img/imgTwo/watch.jpg", "img/imgTwo/water.jpg"];
-        var aTextL = ["第一组第1张", "第一组第2张", "第一组第3张", "第一组第4张", "第一组第5张"];
-        var aTextR = ["第二组第1张", "第二组第2张", "第二组第3张", "第二组第4张"];
-        var num = 0;
-        var num1 = 0;
+        var oNext = document.getElementById('btnB'),
+            oLast = document.getElementById('btnT'),
+            oPicL = document.getElementById('pic_L'),
+            oPicR = document.getElementById('pic_R'),
+            oTextL = document.getElementById('text_L'),
+            oTextR = document.getElementById('text_R'),
+            oNumL = document.getElementById('num_L'),
+            oNumR = document.getElementById('num_R'),
+            oPicLeftLast = document.getElementById('onclickL_L'),
+            oPicLeftNext = document.getElementById('onclickL_R'),
+            oPicRightLast = document.getElementById('onclickR_L'),
+            oPicRightNext = document.getElementById('onclickR_R'),
+            aPicL = ['img/imgOne/belle.jpg', 'img/imgOne/city.jpg', 'img/imgOne/flower.jpg', 'img/imgOne/rouse.jpg', 'img/imgOne/smail.jpg'],
+            aPicR = ["img/imgTwo/load.jpg", "img/imgTwo/pencil.jpg", "img/imgTwo/watch.jpg", "img/imgTwo/water.jpg"],
+            aTextL = ["第一组第1张", "第一组第2张", "第一组第3张", "第一组第4张", "第一组第5张"],
+            aTextR = ["第二组第1张", "第二组第2张", "第二组第3张", "第二组第4张"],
+            num = 0,
+            num1 = 0;
 
         function TabL() { //左边 初始化
             oPicL.src = aPicL[num];
